@@ -3,14 +3,14 @@ var app = express();
 var path = require("path");
 
 //Mongo Database require variables
-var MongoClient = require('mongodb').MongoClient;
-var url = 'mongodb://localhost:27017/comment_application';
+var MongoClient = require("mongodb").MongoClient;
+var url = "mongodb://localhost:27017/comment_application";
 
 app.get("/", function (req, res) {
   res.sendFile(path.join(__dirname + "/client/build/index.html"));
 });
 
-app.get('/api/characters', function(req, res) {
+app.get("/api/characters", function(req, res) {
 	MongoClient.connect(url, function(err, db) {
 		var collection = db.collection("characters");
 		collection.find({}).toArray(function(err, docs) {
