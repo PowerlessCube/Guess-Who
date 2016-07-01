@@ -1,9 +1,10 @@
 var React = require("react");
 var ReactDOM = require("react-dom");
+var GuessWhoBox = require("./components/GuessWhobox.jsx");
 
 window.onload = function(){
   ReactDOM.render(
-    <h1> App Started </h1>,
+    <GuessWhoBox />,
     document.getElementById("app")
   );
 };
