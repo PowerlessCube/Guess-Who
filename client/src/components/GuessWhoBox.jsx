@@ -1,16 +1,17 @@
 var React = require("react");
+var FeatureSelector = require("./FeatureSelector.jsx");
 
 var GuessWhoBox = React.createClass({
 	getInitialState: function() {
-		return {data: []};
+		return {characters: []};
 	},
 
 	fetchCharacters: function() {
 		var request = new XMLHttpRequest();
 		request.open("GET", this.props.url);
 		request.onload = function() {
-			var dbCharacters = JSON.parse( request.responseText );
-			this.setState({ data: dbCharacters });
+			var data = JSON.parse( request.responseText );
+			this.setState({ characters: data });
 		}.bind(this);
 		request.send();
 	},
@@ -23,9 +24,10 @@ var GuessWhoBox = React.createClass({
 		return (
 			<div className="main-div">
 				Main Div
-			<div className="guess-div">
-				Guess Div
-			</div>
+				<FeatureSelector
+					className="Selector FeatureSelector"
+					characters={this.state.characters}
+				/>
 			</div>
 		);
 	}
