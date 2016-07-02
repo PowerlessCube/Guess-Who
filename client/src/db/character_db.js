@@ -1,4 +1,4 @@
-db.guessWhoCharacters.insert([
+db.GuessWho.insert([
 	{
 		name: "paul",
 		sex: "male",
