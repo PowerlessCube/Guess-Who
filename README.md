@@ -13,3 +13,12 @@ The App will let you know when your guess is incorrect or successful.
 - babel
 - webpack
 - react
+
+#Running the database
+The below is instructions for running the seed data required to populate your database.
+- Seed Data - for MongoDB.
+- Navigate to the following file desitination:
+- client/src/db
+- start up the mongo client in the terminal window.
+- type the following mongoDB command to load this file:
+- load("character_db.js");

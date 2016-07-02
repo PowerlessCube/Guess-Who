@@ -4,7 +4,7 @@ var GuessWhoBox = require("./components/GuessWhobox.jsx");
 
 window.onload = function(){
   ReactDOM.render(
-    <GuessWhoBox />,
+    <GuessWhoBox url="api/characters" />,
     document.getElementById("app")
   );
 };
