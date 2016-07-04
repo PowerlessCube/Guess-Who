@@ -1,4 +1,3 @@
-
 var React = require("react");
 var _ = require("lodash");
 
@@ -7,12 +6,16 @@ var FeatureSelector = React.createClass({
 		return { selectedIndex: null };
 	},
 
-	onChange: function(e) {
-		
-	}
+	handleChange: function(e) {
+		e.preventDefault();
+		var newIndex = e.target.value
+		this.setState({selectedIndex: newIndex})
+		var selectedCharacteristic = this.props.character[ newIndex ];
+
+	},
 
 	render: function() {
-		if( !this.props.characters[0] ) { return( <h1>Getting data</h1> ) }
+		if( !this.props.characters[0] ) { return( <h4>Getting Data...</h4>) }
 		var keys = Object.keys(this.props.characters[0]);
 		keys.shift();
 		var option = keys.map(function(key, index) {
@@ -20,7 +23,7 @@ var FeatureSelector = React.createClass({
 		}.bind(this))
 
 		return (
-			<select value={this.state.selectedIndex}>
+			<select value={this.state.selectedIndex} onChange={this.handleChange}>
 				{option}
 			</select>
 		);
