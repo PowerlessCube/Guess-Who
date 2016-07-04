@@ -7,19 +7,22 @@ var FeatureSelector = React.createClass({
 		return { selectedIndex: null };
 	},
 
+	onChange: function(e) {
+		
+	}
+
 	render: function() {
 		if( !this.props.characters[0] ) { return( <h1>Getting data</h1> ) }
-		var keys = Object.keys( this.props.characters[0] );
-		console.log( keys);
-		// var chars = this.props.characters.map(function(character) {
-		// 	return character;
-		// });
-		// var keys = characters[0].map(function(key) {
-		// 	return Object.keys(key);
-		// });
-		// console.log(keys);
+		var keys = Object.keys(this.props.characters[0]);
+		keys.shift();
+		var option = keys.map(function(key, index) {
+			return (<option value={index} key={this.props.characters[index]._id}> {_.capitalize(key)} </option>)
+		}.bind(this))
+
 		return (
-			<h1>Placeholder!</h1>
+			<select value={this.state.selectedIndex}>
+				{option}
+			</select>
 		);
 	}
 

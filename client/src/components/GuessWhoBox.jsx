@@ -25,10 +25,12 @@ var GuessWhoBox = React.createClass({
 			<div className="main-div">
 				Main Div
 				<div className="guess-div">
+					<label htmlFor="">Select Features: </label>
 					<FeatureSelector
 						className="Selector FeatureSelector"
 						characters={this.state.characters}
 					/>
+				
 				</div>
 			</div>
 		);
