@@ -8,7 +8,11 @@ var CharacteristicSelector = React.createClass({
 
 	render: function() {
 		return(
-			<h4>CharacteristicSelector</h4>
+			<select>
+				<option>Test</option>
+			</select>
 		)
 	}
-})
+});
+
+module.exports = CharacteristicSelector;

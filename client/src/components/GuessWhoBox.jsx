@@ -1,9 +1,13 @@
 var React = require("react");
 var FeatureSelector = require("./FeatureSelector.jsx");
+var CharacteristicSelector = require("./CharacteristicSelector.jsx");
 
 var GuessWhoBox = React.createClass({
 	getInitialState: function() {
-		return {characters: []};
+		return {
+			characters: [],
+			displayCharacteristic: null
+		};
 	},
 
 	fetchCharacters: function() {
@@ -20,6 +24,10 @@ var GuessWhoBox = React.createClass({
 		this.fetchCharacters();
 	},
 
+	setDisplayCharacteristic: function(characteristic) {
+		this.setState({ displayCharacteristic: characteristic })
+	},
+
 	render: function() {
 		return (
 			<div className="main-div">
@@ -27,10 +35,14 @@ var GuessWhoBox = React.createClass({
 				<div className="guess-div">
 					<label htmlFor="">Select Features: </label>
 					<FeatureSelector
-						className="Selector FeatureSelector"
+						className="Selector"
 						characters={this.state.characters}
 					/>
-				
+				<label>Characteristic selector: </label>
+					<CharacteristicSelector
+						className="Selector"
+						onSelectedCharacteristic={this.setDisplayCharacteristic}
+					/>
 				</div>
 			</div>
 		);
