@@ -1,3 +1,4 @@
+
 var React = require("react");
 var _ = require("lodash");
 
@@ -7,16 +8,18 @@ var FeatureSelector = React.createClass({
 	},
 
 	render: function() {
-		var characters = this.props.characters.map(function(character) {
-			return character;
-		});
-		console.log(characters[0]);
-		var keys = characters[0].map(function(key) {
-			return Object.keys(key);
-		});
-		console.log(keys);
+		if( !this.props.characters[0] ) { return( <h1>Getting data</h1> ) }
+		var keys = Object.keys( this.props.characters[0] );
+		console.log( keys);
+		// var chars = this.props.characters.map(function(character) {
+		// 	return character;
+		// });
+		// var keys = characters[0].map(function(key) {
+		// 	return Object.keys(key);
+		// });
+		// console.log(keys);
 		return (
-			<h1>the fuck is going on with this thing?</h1>
+			<h1>Placeholder!</h1>
 		);
 	}
 
