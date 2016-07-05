@@ -19,7 +19,13 @@ var FeatureForm = React.createClass({
 				<FeatureSelector
 					className="selector"
 					keys={getKeys}
+					setCharacteristic={this.props.setCharacteristic}
 				/>
+			<FeatureOption
+				className="selector"
+				options={this.props.options}
+			/>
+			// TODO: Create a feature Option selector file and pass options too it.
 			</form>
 		);
 	}
