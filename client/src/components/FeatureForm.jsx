@@ -11,7 +11,7 @@ var FeatureForm = React.createClass({
 		}
 		var getKeys = this.props.characters[0]
 		return (
-			<form action="">
+			<form action="submit">
 				<label>Choose a feature: </label>
 				<FeatureSelector
 					className="selector"
@@ -23,6 +23,7 @@ var FeatureForm = React.createClass({
 				className="selector"
 				featureOptions={this.props.options}
 			/>
+			<input type="button" value="Guess"/>
 			</form>
 		);
 	}
