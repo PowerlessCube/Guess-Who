@@ -2,6 +2,7 @@ var React = require("react");
 var _ = require("lodash");
 
 var FeatureSelector = require("./FeatureSelector.jsx")
+var FeatureOption = require("./FeatureOption.jsx")
 
 var FeatureForm = React.createClass({
 	setDisplayFeature: function() {
@@ -21,11 +22,11 @@ var FeatureForm = React.createClass({
 					keys={getKeys}
 					setCharacteristic={this.props.setCharacteristic}
 				/>
+			<label>Choose Characteristic: </label>
 			<FeatureOption
 				className="selector"
-				options={this.props.options}
+				featureOptions={this.props.options}
 			/>
-			// TODO: Create a feature Option selector file and pass options too it.
 			</form>
 		);
 	}

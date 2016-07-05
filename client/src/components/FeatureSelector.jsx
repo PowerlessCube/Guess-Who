@@ -5,7 +5,6 @@ var FeatureSelector = React.createClass({
 	handleChange: function(e) {
 		e.preventDefault();
 		var newKey= e.target.value;
-		console.log('value', newKey)
 		this.props.setCharacteristic(newKey);
 	},
 

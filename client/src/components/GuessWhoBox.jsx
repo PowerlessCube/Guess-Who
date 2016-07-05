@@ -7,7 +7,7 @@ var GuessWhoBox = React.createClass({
 		//state sets happen here.
 		return {
 			characters: [],
-			chosenCharacteristic: null
+			chosenCharacteristic: null,
 			selectedCharacter: null
 		};
 	},
@@ -33,16 +33,13 @@ var GuessWhoBox = React.createClass({
 		var options = this.state.characters.map( function(character){
 			return character[characteristic]
 		})
-		console.log('options in function', options)
 		return _.uniq(options)
 	},
 
 	render: function() {
-		console.log('this.state.chosenCharacteristic', this.state.chosenCharacteristic)
 		if(this.state.chosenCharacteristic){
 			var options = this.optionsForCharacteristic(this.state.chosenCharacteristic)
 		}
-		console.log('options', options)
 		return (
 			<div className="main-div">
 				Main Div
