@@ -21,7 +21,10 @@ var GuessWhoBox = React.createClass({
 		request.open("GET", this.props.url);
 		request.onload = function() {
 			var data = JSON.parse( request.responseText );
-			this.setState({ characters: data, selectedCharacter: data[0] });
+			this.setState({
+				characters: data,
+				selectedCharacter: data[0],
+		  });
 		}.bind(this);
 		request.send();
 	},

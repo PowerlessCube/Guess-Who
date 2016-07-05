@@ -5,10 +5,6 @@ var FeatureSelector = require("./FeatureSelector.jsx")
 var FeatureOption = require("./FeatureOption.jsx")
 
 var FeatureForm = React.createClass({
-	setDisplayFeature: function() {
-		this.setState({  })
-	},
-
 	render: function() {
 		if( !this.props.characters[0] ) {
 			return( <h4>Getting Data...</h4>)
