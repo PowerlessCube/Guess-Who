@@ -32,5 +32,3 @@ var server = app.listen(3000, function () {
 
   console.log("Example app listening at http://%s:%s", host, port);
 });
-
-// FIXME: Need to require in mongodb from NPM to run and parse the information from our database.
